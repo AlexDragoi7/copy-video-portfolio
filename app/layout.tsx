@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Special_Elite, JetBrains_Mono } from "next/font/google";
+import { Special_Elite, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
 const specialElite = Special_Elite({
@@ -9,9 +9,9 @@ const specialElite = Special_Elite({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const ebGaramond = EB_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${specialElite.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${specialElite.variable} ${ebGaramond.variable}`}>
       <body className="bg-neutral-200 font-body text-text antialiased">{children}</body>
     </html>
   );

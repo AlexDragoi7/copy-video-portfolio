@@ -39,7 +39,7 @@
   --color-accent-2-900: #482d1f;
 
   --font-heading: "Special Elite", monospace;
-  --font-body: "JetBrains Mono", monospace;
+  --font-body: "EB Garamond", serif;
 
   --radius-card: 4px;
 
@@ -76,6 +76,7 @@ body {
   background: var(--color-neutral-200);
   color: var(--color-text);
   font-family: var(--font-body);
+  font-size-adjust: 0.52;
 }
 
 h1,
