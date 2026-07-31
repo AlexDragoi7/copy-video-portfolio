@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #e4e6e0;
+  --color-surface: #f7f7f3;
+  --color-text: #23302e;
+  --color-accent: #63b3ba;
+  --color-accent-2: #db8f63;
+  --color-divider: color-mix(in srgb, #23302e 14%, transparent);
+
+  --color-neutral-100: #fafaf8;
+  --color-neutral-200: #f0f1ea;
+  --color-neutral-300: #e4e6e0;
+  --color-neutral-400: #c7c9bf;
+  --color-neutral-500: #a3a69b;
+  --color-neutral-600: #7d8076;
+  --color-neutral-700: #5b5e54;
+  --color-neutral-800: #3a3d35;
+  --color-neutral-900: #24261f;
+
+  --color-accent-100: #f2fafb;
+  --color-accent-200: #cde4ed;
+  --color-accent-300: #a9d6dc;
+  --color-accent-400: #83c2c9;
+  --color-accent-500: #63b3ba;
+  --color-accent-600: #4b939a;
+  --color-accent-700: #397479;
+  --color-accent-800: #28545a;
+  --color-accent-900: #17363a;
+
+  --color-accent-2-100: #fdf3e7;
+  --color-accent-2-200: #f8ddbe;
+  --color-accent-2-300: #f0c48f;
+  --color-accent-2-400: #ebb66d;
+  --color-accent-2-500: #db8f63;
+  --color-accent-2-600: #c17a4e;
+  --color-accent-2-700: #9c623d;
+  --color-accent-2-800: #714630;
+  --color-accent-2-900: #482d1f;
+
+  --font-heading: "Special Elite", monospace;
+  --font-body: "JetBrains Mono", monospace;
+
+  --radius-card: 4px;
+
+  --shadow-page: 0 1px 2px rgba(23, 54, 58, 0.05), 0 12px 32px rgba(23, 54, 58, 0.08);
+  --shadow-card-hover: 0 10px 24px rgba(23, 54, 58, 0.18);
+  --shadow-modal: 0 24px 64px rgba(23, 54, 58, 0.28);
+
+  --animate-fade-in-up: fadeInUp 0.6s ease both;
+  --animate-cursor-blink: cursorBlink 0.9s step-end infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cursorBlink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+body {
+  background: var(--color-neutral-200);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+a {
+  color: var(--color-accent-800);
+}
+
+a:hover {
+  color: var(--color-accent-2-700);
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border border-transparent px-5 py-2.5 text-sm font-medium no-underline transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-accent-800 text-neutral-100;
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-900);
+  }
+
+  .btn-icon {
+    @apply size-9 flex-none rounded-md border-none bg-transparent p-0 text-base leading-none;
+  }
+  .btn-icon:hover {
+    background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded px-2.5 py-1 text-[11px] tracking-wide;
+  }
+
+  .field label {
+    @apply mb-1.5 block text-xs;
+    color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  }
+
+  .input {
+    @apply w-full rounded-md border px-3 py-2 text-sm;
+    font-family: var(--font-body);
+    background: var(--color-surface);
+    border-color: var(--color-divider);
+    color: var(--color-text);
+  }
+  .input:hover {
+    border-color: color-mix(in srgb, var(--color-text) 45%, transparent);
+  }
+  .input:focus-visible {
+    outline: 2px solid var(--color-accent-600);
+    outline-offset: 0;
+  }
+
+  .dialog-backdrop {
+    @apply fixed inset-0 z-[300] grid place-items-center p-4;
+    background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+  }
+}
