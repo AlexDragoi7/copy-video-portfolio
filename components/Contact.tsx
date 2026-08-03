@@ -15,7 +15,7 @@ export default function Contact() {
           Tell me what you&apos;re working on and what you need written — I&apos;ll get back to
           you within a couple of days.
         </p>
-        <a href="dragoialenxadru26@gmail.com" className="btn btn-primary">
+        <a href="mailto:dragoialenxadru26@gmail.com" className="btn btn-primary">
           dragoialenxadru26@gmail.com
         </a>
       </div>
