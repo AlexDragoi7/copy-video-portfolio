@@ -1,21 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import { blockPalette, projects, type Project } from "@/lib/projects";
-import EmailModal from "@/components/EmailModal";
+import { blockPalette, projects } from "@/lib/projects";
+import WorkModal from "@/components/WorkModal";
 
 export default function WorkGrid() {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
   const activeProject = activeId ? projects.find((p) => p.id === activeId) ?? null : null;
-
-  const openProject = (project: Project) => {
-    if (project.type === "link") {
-      window.open(project.href, "_blank", "noopener,noreferrer");
-      return;
-    }
-    setActiveId(project.id);
-  };
 
   return (
     <>
@@ -32,7 +25,10 @@ export default function WorkGrid() {
               <button
                 key={project.id}
                 type="button"
-                onClick={() => openProject(project)}
+                onClick={(e) => {
+                  triggerRef.current = e.currentTarget;
+                  setActiveId(project.id);
+                }}
                 className="mb-3 flex w-full break-inside-avoid flex-col gap-3.5 rounded-card border-none p-5 text-left font-body transition-transform duration-[250ms] ease-out hover:scale-[0.99] hover:shadow-card-hover"
                 style={{ background: blockColor, aspectRatio: project.ratio }}
               >
@@ -47,6 +43,7 @@ export default function WorkGrid() {
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover object-top"
+                      priority={index < 3}
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-white/15 to-transparent" />
@@ -61,8 +58,12 @@ export default function WorkGrid() {
         </div>
       </section>
 
-      {activeProject && activeProject.type === "email" && (
-        <EmailModal project={activeProject} onClose={() => setActiveId(null)} />
+      {activeProject && (
+        <WorkModal
+          project={activeProject}
+          onClose={() => setActiveId(null)}
+          triggerRef={triggerRef}
+        />
       )}
     </>
   );
