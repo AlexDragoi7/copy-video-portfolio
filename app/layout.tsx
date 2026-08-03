@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Special_Elite, EB_Garamond } from "next/font/google";
+import { Space_Grotesk, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
-const specialElite = Special_Elite({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
   display: "swap",
 });
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${specialElite.variable} ${ebGaramond.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${ebGaramond.variable}`}>
       <body className="bg-neutral-200 font-body text-text antialiased">{children}</body>
     </html>
   );

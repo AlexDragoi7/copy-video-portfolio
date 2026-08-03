@@ -38,7 +38,7 @@
   --color-accent-2-800: #714630;
   --color-accent-2-900: #482d1f;
 
-  --font-heading: "Special Elite", monospace;
+  --font-heading: "Space Grotesk", sans-serif;
   --font-body: "EB Garamond", serif;
 
   --radius-card: 4px;
@@ -83,20 +83,22 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 700;
 }
 
-a {
-  color: var(--color-accent-800);
-}
+@layer base {
+  a {
+    color: var(--color-accent-800);
+  }
 
-a:hover {
-  color: var(--color-accent-2-700);
+  a:hover {
+    color: var(--color-accent-2-700);
+  }
 }
 
 @layer components {
   .btn {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border border-transparent px-5 py-2.5 text-sm font-medium no-underline transition-colors;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-transparent px-5 py-2.5 text-sm font-medium no-underline transition-colors;
   }
 
   .btn-primary {
@@ -107,7 +109,7 @@ a:hover {
   }
 
   .btn-icon {
-    @apply size-9 flex-none rounded-md border-none bg-transparent p-0 text-base leading-none;
+    @apply size-9 flex-none rounded-full border-none bg-transparent p-0 text-base leading-none;
   }
   .btn-icon:hover {
     background: color-mix(in srgb, var(--color-text) 8%, transparent);

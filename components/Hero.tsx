@@ -26,10 +26,18 @@ export default function Hero() {
   return (
     <header className="relative mb-10 animate-fade-in-up overflow-hidden">
       <div
-        className="absolute -inset-[10%] z-0 blur-[2px]"
+        className="absolute -inset-[10%] z-0 opacity-50 mix-blend-multiply blur-[48px]"
         style={{
           background:
             "radial-gradient(45% 38% at 28% 24%, var(--color-accent-500) 0%, transparent 70%), radial-gradient(50% 42% at 78% 66%, var(--color-accent-2-400) 0%, transparent 70%), radial-gradient(38% 34% at 68% 18%, var(--color-accent-2-200) 0%, transparent 72%), radial-gradient(55% 48% at 24% 82%, var(--color-accent-700) 0%, transparent 70%)",
+          maskImage: "radial-gradient(75% 75% at 50% 42%, black 35%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(75% 75% at 50% 42%, black 35%, transparent 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: "linear-gradient(to bottom, transparent 55%, var(--color-neutral-200) 100%)",
         }}
       />
       <div className="relative z-[1] flex min-h-[60vh] flex-col items-center justify-center px-5 py-14 text-center sm:px-8 sm:py-20 lg:px-16 lg:py-24">
