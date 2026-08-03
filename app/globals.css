@@ -38,7 +38,7 @@
   --color-accent-2-800: #714630;
   --color-accent-2-900: #482d1f;
 
-  --font-heading: "Special Elite", monospace;
+  --font-heading: "Space Grotesk", sans-serif;
   --font-body: "EB Garamond", serif;
 
   --radius-card: 4px;
@@ -83,7 +83,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 @layer base {

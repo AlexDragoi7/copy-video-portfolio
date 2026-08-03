@@ -126,6 +126,12 @@ export default function WorkModal({ project, onClose, triggerRef }: WorkModalPro
         )}
 
         <div id={descId} className="flex flex-col gap-5">
+          <div className="text-[15px] leading-[1.7] whitespace-pre-line text-text">
+            <span className="mb-1.5 block text-[11px] font-heading tracking-[0.08em] text-accent-2-600 uppercase">
+              About this project
+            </span>
+            {project.description?.trim() ? project.description : "Write-up coming soon."}
+          </div>
           {project.emailContent?.trim() && (
             <div className="rounded-lg border border-divider bg-neutral-200/50 p-5 text-[14.5px] leading-[1.7] text-text/90">
               {(project.emailSubject || project.emailSender) && (
@@ -145,12 +151,6 @@ export default function WorkModal({ project, onClose, triggerRef }: WorkModalPro
               <div className="space-y-4">{renderTextBlocks(project.emailContent)}</div>
             </div>
           )}
-          <div className="text-[15px] leading-[1.7] whitespace-pre-line text-text/90">
-            <span className="mb-1.5 block text-[11px] tracking-[0.08em] text-text/50 uppercase">
-              About this project
-            </span>
-            {project.description?.trim() ? project.description : "Write-up coming soon."}
-          </div>
         </div>
 
         {showCta && (
