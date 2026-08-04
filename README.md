@@ -51,4 +51,5 @@ Projects can be edited through a local-only `/admin` page instead of hand-editin
 A couple of field notes for the form:
 - **Id** is the project's slug — keep it lowercase with hyphens, it must be unique.
 - **Ratio** controls the card's aspect ratio in the grid (e.g. `4/5`, `1/1`, `4/3`).
+  <img width="1996" height="880" alt="Screenshot 2026-08-04 at 16 20 18" src="https://github.com/user-attachments/assets/7cb6266c-4e81-42ce-89c0-cf2d007dc3e8" />
 - **Email content** supports the same formatting the modal renders: separate paragraphs with a blank line, and start every line of a paragraph with `- ` to render it as a bullet list.
