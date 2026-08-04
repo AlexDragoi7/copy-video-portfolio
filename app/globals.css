@@ -115,6 +115,16 @@ h3 {
     background: color-mix(in srgb, var(--color-text) 8%, transparent);
   }
 
+  .btn-close {
+    @apply size-8 flex-none rounded-full border-none p-0 text-sm leading-none;
+    color: var(--color-text);
+    background: color-mix(in srgb, var(--color-text) 8%, transparent);
+    transition: background 0.12s;
+  }
+  .btn-close:hover {
+    background: color-mix(in srgb, var(--color-text) 14%, transparent);
+  }
+
   .tag {
     @apply inline-flex items-center rounded px-2.5 py-1 text-[11px] tracking-wide;
   }
@@ -142,5 +152,9 @@ h3 {
   .dialog-backdrop {
     @apply fixed inset-0 z-[300] grid place-items-center p-4;
     background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+  }
+
+  .modal-scroll {
+    scrollbar-gutter: stable both-edges;
   }
 }

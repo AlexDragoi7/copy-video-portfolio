@@ -93,76 +93,78 @@ export default function WorkModal({ project, onClose, triggerRef }: WorkModalPro
         aria-describedby={descId}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="relative flex max-h-[90vh] w-[min(960px,94vw)] max-w-[960px] flex-col gap-5 overflow-y-auto rounded-[10px] bg-neutral-100 p-8 shadow-modal outline-none sm:p-10"
+        className="relative flex max-h-[90vh] w-[min(960px,94vw)] max-w-[960px] flex-col overflow-hidden rounded-[10px] bg-neutral-100 shadow-modal outline-none"
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close dialog"
-          className="btn btn-icon absolute top-3 right-3 bg-neutral-200 text-lg hover:bg-neutral-300"
+          className="btn btn-close absolute top-3 right-5"
         >
           ×
         </button>
 
-        <span className="tag self-start bg-accent-2-700 text-neutral-100">{project.kicker}</span>
-        <h3 id={titleId} className="m-0 font-heading text-[24px] leading-[1.3]">
-          {project.title}
-        </h3>
+        <div className="modal-scroll flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto p-8 sm:p-10">
+          <span className="tag self-start bg-accent-2-700 text-neutral-100">{project.type}</span>
+          <h3 id={titleId} className="m-0 font-heading text-[24px] leading-[1.3]">
+            {project.title}
+          </h3>
 
-        {modalImages.length > 0 && (
-          <div className={modalImages.length > 1 ? "grid gap-3 sm:grid-cols-2" : "grid gap-3"}>
-            {modalImages.map((src, i) => (
-              <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src={src}
-                  alt={`${project.title} — detail ${i + 1}`}
-                  fill
-                  sizes="(min-width: 640px) 380px, 90vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div id={descId} className="flex flex-col gap-5">
-          <div className="text-[15px] leading-[1.7] whitespace-pre-line text-text">
-            <span className="mb-1.5 block text-[11px] font-heading tracking-[0.08em] text-accent-2-600 uppercase">
-              About this project
-            </span>
-            {project.description?.trim() ? project.description : "Write-up coming soon."}
-          </div>
-          {project.emailContent?.trim() && (
-            <div className="rounded-lg border border-divider bg-neutral-200/50 p-5 text-[14.5px] leading-[1.7] text-text/90">
-              {(project.emailSubject || project.emailSender) && (
-                <div className="mb-4 space-y-0.5 border-b border-divider pb-3 text-[13px] text-text/70">
-                  {project.emailSubject && (
-                    <div>
-                      <span className="font-semibold text-text">Subject:</span> {project.emailSubject}
-                    </div>
-                  )}
-                  {project.emailSender && (
-                    <div>
-                      <span className="font-semibold text-text">Sender:</span> {project.emailSender}
-                    </div>
-                  )}
+          {modalImages.length > 0 && (
+            <div className={modalImages.length > 1 ? "grid gap-3 sm:grid-cols-2" : "grid gap-3"}>
+              {modalImages.map((src, i) => (
+                <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                  <Image
+                    src={src}
+                    alt={`${project.title} — detail ${i + 1}`}
+                    fill
+                    sizes="(min-width: 640px) 380px, 90vw"
+                    className="object-cover"
+                  />
                 </div>
-              )}
-              <div className="space-y-4">{renderTextBlocks(project.emailContent)}</div>
+              ))}
             </div>
           )}
-        </div>
 
-        {showCta && (
-          <Link
-            href={project.href as string}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary self-start"
-          >
-            Visit live site ↗
-          </Link>
-        )}
+          <div id={descId} className="flex flex-col gap-5">
+            <div className="text-[15px] leading-[1.7] whitespace-pre-line text-text">
+              <span className="mb-1.5 block text-[11px] font-heading tracking-[0.08em] text-accent-2-600 uppercase">
+                About this project
+              </span>
+              {project.description?.trim() ? project.description : "Write-up coming soon."}
+            </div>
+            {project.emailContent?.trim() && (
+              <div className="rounded-lg border border-divider bg-neutral-200/50 p-5 text-[14.5px] leading-[1.7] text-text/90">
+                {(project.emailSubject || project.emailSender) && (
+                  <div className="mb-4 space-y-0.5 border-b border-divider pb-3 text-[13px] text-text/70">
+                    {project.emailSubject && (
+                      <div>
+                        <span className="font-semibold text-text">Subject:</span> {project.emailSubject}
+                      </div>
+                    )}
+                    {project.emailSender && (
+                      <div>
+                        <span className="font-semibold text-text">Sender:</span> {project.emailSender}
+                      </div>
+                    )}
+                  </div>
+                )}
+                <div className="space-y-4">{renderTextBlocks(project.emailContent)}</div>
+              </div>
+            )}
+          </div>
+
+          {showCta && (
+            <Link
+              href={project.href as string}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary self-start"
+            >
+              Visit live site ↗
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

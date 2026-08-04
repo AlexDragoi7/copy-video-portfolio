@@ -52,7 +52,7 @@ export default function WorkGrid() {
         style={{ background: blockColor, aspectRatio: project.ratio }}
       >
         <span className="tag self-start bg-neutral-100/90" style={{ color: blockColor }}>
-          {project.kicker}
+          {project.type}
         </span>
         <figure className="relative m-0 min-h-0 flex-1 overflow-hidden rounded-lg">
           {project.image ? (
