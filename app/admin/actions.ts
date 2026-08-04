@@ -160,7 +160,7 @@ export async function deleteProject(id: string): Promise<void> {
       remaining.flatMap((p) => [p.image, ...(p.modalImages ?? [])].filter(Boolean) as string[])
     );
     const imagesToRemove = [target.image, ...(target.modalImages ?? [])].filter(
-      (src): src is string => Boolean(src) && !stillReferenced.has(src)
+      (src): src is string => typeof src === "string" && !stillReferenced.has(src)
     );
     await Promise.all(imagesToRemove.map(deleteImageFile));
   }
