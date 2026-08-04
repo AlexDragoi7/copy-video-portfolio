@@ -110,22 +110,6 @@ export default function WorkModal({ project, onClose, triggerRef }: WorkModalPro
             {project.title}
           </h3>
 
-          {modalImages.length > 0 && (
-            <div className={modalImages.length > 1 ? "grid gap-3 sm:grid-cols-2" : "grid gap-3"}>
-              {modalImages.map((src, i) => (
-                <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                  <Image
-                    src={src}
-                    alt={`${project.title} — detail ${i + 1}`}
-                    fill
-                    sizes="(min-width: 640px) 380px, 90vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-
           <div id={descId} className="flex flex-col gap-5">
             <div className="text-[15px] leading-[1.7] whitespace-pre-line text-text">
               <span className="mb-1.5 block text-[11px] font-heading tracking-[0.08em] text-accent-2-600 uppercase">
@@ -153,6 +137,25 @@ export default function WorkModal({ project, onClose, triggerRef }: WorkModalPro
               </div>
             )}
           </div>
+
+          {modalImages.length > 0 && (
+            <div className="flex flex-col gap-3">
+              {modalImages.map((src, i) => (
+                <div
+                  key={src}
+                  className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-200"
+                >
+                  <Image
+                    src={src}
+                    alt={`${project.title} — detail ${i + 1}`}
+                    fill
+                    sizes="(min-width: 640px) 800px, 90vw"
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
           {showCta && (
             <Link

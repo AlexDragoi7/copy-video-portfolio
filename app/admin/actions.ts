@@ -140,10 +140,32 @@ export async function saveProject(
   return { success: true, project };
 }
 
+async function deleteImageFile(publicPath: string) {
+  if (!publicPath.startsWith("/work/")) return;
+  try {
+    await fs.unlink(path.join(WORK_DIR, path.basename(publicPath)));
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code !== "ENOENT") throw err;
+  }
+}
+
 export async function deleteProject(id: string): Promise<void> {
   assertDev();
   const projects = await readProjects();
-  await writeProjects(projects.filter((p) => p.id !== id));
+  const target = projects.find((p) => p.id === id);
+  const remaining = projects.filter((p) => p.id !== id);
+
+  if (target) {
+    const stillReferenced = new Set(
+      remaining.flatMap((p) => [p.image, ...(p.modalImages ?? [])].filter(Boolean) as string[])
+    );
+    const imagesToRemove = [target.image, ...(target.modalImages ?? [])].filter(
+      (src): src is string => Boolean(src) && !stillReferenced.has(src)
+    );
+    await Promise.all(imagesToRemove.map(deleteImageFile));
+  }
+
+  await writeProjects(remaining);
   revalidatePath("/");
   revalidatePath("/admin");
 }
