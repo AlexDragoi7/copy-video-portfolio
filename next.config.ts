@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "20mb",
     },
   },
+  async rewrites() {
+    return [{ source: "/anki", destination: "/anki-landing-page.html" }];
+  },
 };
 
 export default nextConfig;

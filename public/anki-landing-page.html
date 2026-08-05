@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anki - Your Astro Guide</title>
+    <!-- Modern typography suite suited for a clean, scientific, yet accessible cosmic brand -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <!-- Tailwind CSS CDN for high-fidelity layouts and dark-mode optimization -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Twinkling keyframes for cosmic depth */
+        @keyframes pulse-stars {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes pulse-stars-delayed {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Re-engineered background layers to ensure crisp, visible star render over navy blue */
+        .cosmic-bg {
+            background-color: #0B132B;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .star-layer-1 {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 50px 80px, #ffffff 100%, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 200px 300px, #e0f2fe 100%, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 450px 150px, #ffffff 100%, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 700px 450px, #bae6fd 100%, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 950px 250px, #ffffff 100%, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 1200px 600px, #f472b6 80%, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 1400px 150px, #ffffff 100%, rgba(0,0,0,0));
+            background-size: 550px 550px;
+            opacity: 0.45;
+            animation: pulse-stars 8s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star-layer-2 {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(1px 1px at 120px 200px, #ffffff 100%, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 320px 50px, #f0fdf4 100%, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 600px 280px, #ffffff 100%, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 850px 110px, #e0f2fe 90%, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 1050px 490px, #ffffff 100%, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 1300px 370px, #ffffff 100%, rgba(0,0,0,0));
+            background-size: 400px 400px;
+            opacity: 0.35;
+            animation: pulse-stars-delayed 12s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="cosmic-bg text-[#F8F9FA] font-sans antialiased">
+
+    <!-- Star Container Nodes -->
+    <div class="star-layer-1"></div>
+    <div class="star-layer-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-[#0B132B]/90 backdrop-blur-md border-b border-[#1C2541]/60 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo Grouping -->
+            <div class="flex items-center gap-3 w-1/4 justify-start">
+                <!-- Nebula Icon: A multi-layered glowing cosmic token -->
+                <div class="w-9 h-9 relative rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-sky-400 flex items-center justify-center shadow-lg shadow-pink-500/20 overflow-hidden shrink-0">
+                    <div class="absolute inset-1 bg-[#0B132B]/30 rounded-full blur-[2px]"></div>
+                    <span class="relative text-xs text-white drop-shadow">✨</span>
+                </div>
+                <span class="font-extrabold text-2xl tracking-tight text-white uppercase">Anki</span>
+            </div>
+            
+            <!-- Global Nav Links - Centered inline between Brand and CTAs -->
+            <div class="hidden md:flex items-center justify-center gap-10 text-sm font-semibold text-[#8E9AAF] flex-1">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                <a href="#download" class="hover:text-white transition">Download</a>
+            </div>
+            
+            <!-- Contextual Navigation CTAs -->
+            <div class="flex items-center justify-end gap-6 w-1/4">
+                <a href="#" class="bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white text-sm font-bold px-6 py-3 rounded-full transition shadow-lg shadow-sky-500/20 whitespace-nowrap">Jump into the Universe</a>
+                <a href="#" class="text-sm font-semibold text-[#8E9AAF] hover:text-white transition">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Sections wrapped to remain clearly legible over stars -->
+    <div class="relative z-10">
+        <!-- 1. Centered Hero Section -->
+        <header class="py-28 md:py-36 text-center max-w-4xl mx-auto px-6 space-y-8">
+            <div class="flex flex-col -space-y-1 sm:-space-y-2">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">Discover</h1>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">Learn</h1>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">Be Amazed</h1>
+            </div>
+            <h1 class="text-3xl sm:text-3xl md:text-3xl font-black tracking-tight text-white leading-[1.1]">One Constellation at a Time</h1>
+            <p class="text-lg md:text-xl text-[#8E9AAF] leading-relaxed max-w-2xl mx-auto">Anki makes complex astrophysical telemetry easy, so you can enjoy discovering space in a fun and immersive way. Powered by a clean interface and an ultra fast rendering engine, exploring exoplanets, nebulae or galaxies in spectacular details has never been so satisfying</p>
+            
+            <div class="pt-6 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4 max-w-md mx-auto">
+                <button class="bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold px-10 py-4 rounded-full shadow-xl shadow-sky-500/10 transition text-base">Wander the infinite</button>
+                <button class="bg-[#1C2541]/40 border-2 border-[#38BDF8]/20 hover:bg-[#1C2541]/80 text-[#38BDF8] font-bold px-10 py-4 rounded-full transition text-base">View Orbits</button>
+            </div>
+        </header>
+
+        <!-- 2. Interactive Feature Blueprint Architecture Grid -->
+        <section id="features" class="py-24 bg-[#1C2541]/20 border-y border-[#1C2541]/60 backdrop-blur-[2px]">
+            <div class="max-w-7xl mx-auto px-6 space-y-16">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white uppercase">Stellar features</h2>
+                    <p class="text-[#8E9AAF] text-sm"><i>*Anki is currently available only on iOS and macOS. Subscribe to our <a href="https://newsletter.com"><b>newsletter</b></a>, so you can receive news and information about its launch on Android, Linux and Windows, as well as other upcoming features</i></p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1: Interactive AR & Sky Mapping -->
+                    <div class="bg-[#1C2541]/40 p-8 rounded-2xl border border-[#1C2541]/80 hover:border-sky-500/30 transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="text-3xl">📱</div>
+                            <h3 class="font-bold text-xl text-white">Sky Mapping & Interactive AR</h3>
+                            <p class="text-sm text-[#8E9AAF] leading-relaxed">Delve into planetary surfaces, examine natural satellites or your favorite star clusters. Simply point your phone at the night sky and let yourself be engaged in a deep space journey with our custom Augmented Reality features</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Virtual Space Travel -->
+                    <div class="bg-[#1C2541]/40 p-8 rounded-2xl border border-[#1C2541]/80 hover:border-sky-500/30 transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="text-3xl">🚀</div>
+                            <h3 class="font-bold text-xl text-white">Virtual Space Travel</h3>
+                            <p class="text-sm text-[#8E9AAF] leading-relaxed">Buckle up and traverse the space. Zoom in and out to view the observable universe or take an outstanding 3D guided tour through our solar system and interstellar space</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Real-Time Astronomical Events -->
+                    <div class="bg-[#1C2541]/40 p-8 rounded-2xl border border-[#1C2541]/80 hover:border-sky-500/30 transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="text-3xl">☄️</div>
+                            <h3 class="font-bold text-xl text-white">Real-Time Astronomical Events</h3>
+                            <p class="text-sm text-[#8E9AAF] leading-relaxed">Your virtual planetarium. See beautifully rendered solar storms, eclipses and even supernova explosions. Also, interact with a planet and check its current environment, composition, rotational period and more</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Gamified Learning -->
+                    <div class="bg-[#1C2541]/40 p-8 rounded-2xl border border-[#1C2541]/80 hover:border-sky-500/30 transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="text-3xl">🎮</div>
+                            <h3 class="font-bold text-xl text-white">Gamified Learning</h3>
+                            <p class="text-sm text-[#8E9AAF] leading-relaxed">Learning is boring when not playable. Anki makes it interactive through daily challenges, quizzes and the ability to progress your level. A higher level brings more in-app rewards, unlocked new features and even cash prizes</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Asteroid Tracking -->
+                    <div class="bg-[#1C2541]/40 p-8 rounded-2xl border border-[#1C2541]/80 hover:border-sky-500/30 transition flex flex-col justify-between space-y-4 lg:col-span-1 md:col-span-2">
+                        <div class="space-y-3">
+                            <div class="text-3xl">🛰️</div>
+                            <h3 class="font-bold text-xl text-white">Asteroid Tracking</h3>
+                            <p class="text-sm text-[#8E9AAF] leading-relaxed">Join NASA and the European Space Agency in tracking more than 40,000 near-Earth asteroids. This feature lets you observe and keep note of trajectories, changing brightness or surface alterations. Share your analysis and become a real astronomer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Two-Tier Custom Pricing Matrix -->
+        <section id="pricing" class="py-24 max-w-7xl mx-auto px-6 space-y-12">
+            <div class="text-center space-y-3">
+                <h2 class="text-3xl font-extrabold tracking-tight text-white uppercase">Select your Orbit</h2>
+                <p class="text-[#8E9AAF] text-sm max-w-md mx-auto">Down to Earth prices for tiers built with both casual stargazers and dedicated astrophotography professionals in mind</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
+                <!-- Tier 1 -->
+                <div class="bg-[#1C2541]/50 border border-[#1C2541]/80 p-10 rounded-3xl flex flex-col justify-between shadow-xl backdrop-blur-[2px]">
+                    <div class="space-y-5">
+                        <h3 class="font-bold text-xl text-white">Stargazer Plan</h3>
+                        <div class="text-5xl font-black text-white">$0<span class="text-sm font-normal text-[#8E9AAF]">/month</span></div>
+                        <p class="text-xs text-[#8E9AAF]">Included in this plan</p>
+                        <ul class="space-y-3.5 border-t border-[#1C2541] pt-6 text-sm text-[#8E9AAF] font-medium">
+                            <li class="flex items-center gap-3">🪐 Complete AR & Sky Mapping accessibility</li>
+                            <li class="flex items-center gap-3">🪐 Live astronomical events notification</li>
+                            <li class="flex items-center gap-3">🪐 Gamified challenges up to level 20</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-10 py-4 px-6 rounded-full font-bold bg-[#1C2541] hover:bg-[#1C2541]/80 text-white border border-[#38BDF8]/30 transition text-sm">Get Started</button>
+                </div>
+                
+                <!-- Tier 2 -->
+                <div class="bg-[#1C2541]/60 border-2 border-sky-500 p-10 rounded-3xl flex flex-col justify-between shadow-2xl relative backdrop-blur-[2px]">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-md">Full access</span>
+                    <div class="space-y-5">
+                        <h3 class="font-bold text-xl text-white">Astronomer Plan</h3>
+                        <div class="text-5xl font-black text-white">$5<span class="text-sm font-normal text-[#8E9AAF]">/month</span></div>
+                        <p class="text-xs text-[#8E9AAF]">Included in this plan</p>
+                        <ul class="space-y-3.5 border-t border-[#1C2541] pt-6 text-sm text-[#8E9AAF] font-medium">
+                            <li class="flex items-center gap-3 text-sky-400">🪐 Everything in the Stargazer plan</li>
+                            <li class="flex items-center gap-3">🪐 Unlimited gamified experience and level progress</li>
+                            <li class="flex items-center gap-3">🪐 Full suite access to Virtual Space Travel 3D capabilities</li>
+                            <li class="flex items-center gap-3">🪐 Real-time asteroid tracking telemetry</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-10 py-4 px-6 rounded-full font-bold bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-xl shadow-sky-500/20 transition text-sm">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Footer System -->
+        <footer id="download" class="bg-[#050B14]/90 py-16 border-t border-[#1C2541]/60 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-sm">
+                <!-- Application Stores -->
+                <div class="space-y-4">
+                    <h4 class="font-bold text-base text-white">The Universe awaits you</h4>
+                    <div class="flex flex-col gap-2 max-w-[140px]">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store Download" class="w-full h-auto cursor-pointer opacity-80 hover:opacity-100 transition">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Download" class="w-full h-auto cursor-pointer opacity-80 hover:opacity-100 transition">
+                    </div>
+                </div>
+                
+                <!-- Links Column 1 -->
+                <div class="space-y-4">
+                    <h4 class="font-bold text-base text-white">System Index</h4>
+                    <ul class="space-y-2.5 text-[#8E9AAF]">
+                        <li><a href="#" class="hover:text-white transition">Telemetry</a></li>
+                        <li><a href="#" class="hover:text-white transition">Orbit settings</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sky Map</a></li>
+                        <li><a href="#" class="hover:text-white transition">Asteroid Log</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Links Column 2 -->
+                <div class="space-y-4">
+                    <h4 class="font-bold text-base text-white">Support & Documentation</h4>
+                    <ul class="space-y-2.5 text-[#8E9AAF]">
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">API Connections</a></li>
+                        <li><a href="#" class="hover:text-white transition">System Status</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact / Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Technical Column -->
+                <div class="space-y-4">
+                    <h4 class="font-bold text-base text-white">Application Context</h4>
+                    <p class="text-xs text-[#8E9AAF] leading-relaxed">Current version - build number 2.40B</p>
+                    <p class="text-xs text-[#8E9AAF] leading-relaxed"><a href="https://newsletter.com"><b>Release Notes</b></a></p>
+                </div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-[#1C2541]/40 text-center text-xs text-[#5C677D]">
+                &copy; 2026 Anki Application Systems. Observation maps managed under international space monitoring framework guidelines.
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
