@@ -2,43 +2,45 @@
   {
     "id": "fika-email",
     "type": "Email",
-    "title": "Fika for Substack — product email",
+    "title": "Discover Fika for Substack - Growth built through appreciation",
     "ratio": "4/5",
     "image": "/work/fika-email-1.png",
     "emailSubject": "Discover Fika for Substack — Growth built through appreciation",
     "emailSender": "Stefania Barabas",
     "emailContent": "For a long time, I wanted to build something special for my community, where people can feel genuinely appreciated for their content.\r\n\r\nI invite you to try Fika for Substack and share your feedback, so you can enjoy new features and shape this application.\r\n\r\nFika for Substack enables you, as a reader or writer, to have a cozy virtual space where you can offer your admiration to someone else in a sweet way 🍰, using the Swedish 'Fika' concept — a break filled with cakes, baked goods and coffee.\r\n\r\nDiscover how you can use the app:\r\n\r\n- Every week, a fresh cake with 12 slices appears\r\n- You take a slice by leaving a small note of appreciation for someone whose content made an impact in your life\r\n- It can be a writer you follow, a fellow reader, a friend, the host (that's me 😊), or just \"the table\"\r\n- A public appreciation wall keeps every slice forever\r\n- The cake resets every week, but the appreciation wall builds up week by week\r\n\r\nNo accounts, no signup, no follower counts.\r\n\r\nCheck out the app at Fika for Substack and follow @StefsDevNotes to receive more updates and news about its development.\r\n\r\nThank you,\r\n\r\nStefania",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "description": "This email was written for Stefania Barabas, as part of an email campaign aiming to promote her newly built application - \"Fika for Substack\". \r\n\r\nIn this introductory email, I invited users to try the app through a friendly language, explaining the main features clearly and concisely."
   },
   {
     "id": "technical-content",
     "type": "Technical content",
-    "title": "Stef's Dev Notes — article collaboration",
+    "title": "Narrative is a feature : Why engineers should care about storytelling",
     "ratio": "1/1",
+    "image": "/work/article-preview.png",
     "href": "https://stefsdevnotes.substack.com/p/engineer-storytelling-skills",
-    "image": "/work/article-preview.png"
+    "description": "Article wrote in collaboration with Stefania Barabas for her Substack newsletter - Stef's Dev Notes.\r\n \r\nI provided the content about the importance of delivering a good documentation, through my expertise on writing technical procedures."
   },
   {
     "id": "fika-landing",
     "type": "Landing page",
-    "title": "Fika for Substack — landing page copy",
+    "title": "Landing page copy - Fika for Substack",
     "ratio": "4/3",
+    "image": "/work/fika-landing.png",
     "href": "https://fika-for-substack.vercel.app/",
-    "image": "/work/fika-landing.png"
+    "description": "I wrote the text for the landing page of \"Fika for Substack\". \r\n\r\nThe application is insanely fun, hereby inviting you to try it - link below."
   },
   {
     "id": "fika-email-2",
     "type": "Email",
-    "title": "Fika for Substack — product email #2",
+    "title": "New at Fika for Substack - Preview link and Download",
     "ratio": "3/4",
     "image": "/work/fika-email-2.png",
-    "emailContent": "Hi there,\r\n\r\nFirst of all, a massive \"THANK YOU ❤️\" for your feedback.\r\n\r\nBecause of this, I've just released two improvements in Fika for Substack, aimed at answering your requests and providing you a better user experience.\r\n\r\n[CTA - Explore Fika for Substack]\r\n\r\nWhat's new in Fika for Substack:\r\n\r\nPreview link — A flagship feature allowing you to open the shareable note in a new tab, alongside three new actions.\r\n\r\nTo use it, create a note and in the appearing modal, select \"Preview link\". On the new tab, you can select to:\r\n\r\n- Copy note & open Substack — copies the note's message plus a shareable link to the clipboard, then opens Substack in a new tab, so the user can paste it into a note.\r\n- Pass a slice to someone — a call-to-action directing the user back into the \"Pour a coffee, take a slice\" flow and enabling them to take a slice.\r\n- Subscribe to the person who received the note — if the recipient maps to a Substack profile, a direct link to their page is showcased.\r\n\r\nDownload — this feature enables you to share your slice to other social media channels, or save it as an image for yourself.\r\n\r\nFika for Substack is evolving with you, so join me in building new features. I'd appreciate it if you could help by providing feedback using this form.\r\n\r\nUntil next time,\r\nStefania",
-    "description": "Test description here."
+    "emailContent": "Hi there,\r\n\r\nFirst of all, a massive \"THANK YOU ❤️\" for your feedback.\r\n\r\nBecause of this, I've just released two improvements in Fika for Substack, aimed at answering your requests and providing you a better user experience.\r\n\r\n[CTA - Explore Fika for Substack]\r\n\r\nWhat's new in Fika for Substack:\r\n\r\nPreview link — A flagship feature allowing you to open the shareable note in a new tab, alongside three new actions.\r\n\r\nTo use it, create a note and in the appearing modal, select \"Preview link\". On the new tab, you can select to:\r\n\r\n- Copy note & open Substack — copies the note's message plus a shareable link to the clipboard, then opens Substack in a new tab, so the user can paste it into a note.\r\n\r\n- Pass a slice to someone — a call-to-action directing the user back into the \"Pour a coffee, take a slice\" flow and enabling them to take a slice.\r\n\r\n- Subscribe to the person who received the note — if the recipient maps to a Substack profile, a direct link to their page is showcased.\r\n\r\nDownload — this feature enables you to share your slice to other social media channels, or save it as an image for yourself.\r\n\r\nFika for Substack is evolving with you, so join me in building new features. I'd appreciate it if you could help by providing feedback using this form.\r\n\r\nUntil next time,\r\nStefania",
+    "description": "The second email in \"Fika for Substack\" promotional email campaign.\r\n\r\nThe copy detailed two new important features of the application. The open rate of the email (and engagement) improved from 39.7% to 51.8%."
   },
   {
-    "id": "universal-app",
+    "id": "anki-app",
     "type": "Landing page",
-    "title": "Universal app — landing page (case study)",
+    "title": "Anki app — landing page (case study)",
     "ratio": "4/3",
     "description": "Test description"
   }

@@ -12,11 +12,12 @@ export default function Contact() {
           Let&apos;s talk about your project.
         </h2>
         <p className="mb-8 max-w-[46ch] text-[15.5px] leading-[1.65] text-text/90">
-          Tell me what you&apos;re working on and what you need written — I&apos;ll get back to
-          you within a couple of days.
+          I&apos;m here to support your business, so I&apos;d love to hear your idea and what you need written. Just send me an email and I will get back to you as soon as possible.
+          {/* Tell me what you&apos;re working on and what you need written — I&apos;ll get back to
+          you within a couple of days. */}
         </p>
         <a href="mailto:dragoialenxadru26@gmail.com" className="btn btn-primary">
-          dragoialenxadru26@gmail.com
+          dragoialexandru26@gmail.com
         </a>
       </div>
     </section>

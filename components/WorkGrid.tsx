@@ -86,7 +86,7 @@ export default function WorkGrid() {
     <>
       <section id="work" className="mb-10 px-5 pb-18 sm:px-8 sm:pb-24 lg:px-16 lg:pb-28">
         <div className="mb-8 flex items-baseline justify-between gap-4">
-          <h2 className="font-heading text-[clamp(24px,3vw,32px)]">Selected work</h2>
+          <h2 className="font-heading text-[clamp(24px,3vw,32px)]">Featured work</h2>
           <span className="text-[13px] text-text/60">Click through to see it in context</span>
         </div>
 

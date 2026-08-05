@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const HEADLINE = "Words that\nmove people.";
+const HEADLINE = "Copy that\ndrives action";
 
 export default function Hero() {
   const [typedCount, setTypedCount] = useState(0);
@@ -41,7 +41,7 @@ export default function Hero() {
         }}
       />
       <div className="relative z-[1] flex min-h-[60vh] flex-col items-center justify-center px-5 py-14 text-center sm:px-8 sm:py-20 lg:px-16 lg:py-24">
-        <span className="mb-5 block text-[13px] tracking-[0.08em] uppercase">Copywriter</span>
+        <span className="mb-5 block text-[13px] tracking-[0.08em] uppercase">Copywriter & Content Writer</span>
         <h1 className="mb-6 min-h-[2.2em] max-w-[18ch] font-heading text-[clamp(38px,6.5vw,72px)] leading-[1.08] tracking-[-0.01em]">
           {line1 || ""}
           <span
@@ -56,8 +56,7 @@ export default function Hero() {
           />
         </h1>
         <p className="mx-auto mb-8 max-w-[52ch] text-[16.5px] leading-[1.65] text-text/90">
-          Copy that keeps them there — emails, ads, product pages, landing pages, technical docs.
-          Whatever the project needs, in whatever format gets it read.
+          From emails and ads to landing pages and creative articles. I write clear, persuasive copy that reaches the right people and encourages them to take the next step.
         </p>
         <div className="flex flex-wrap gap-3">
           <a href="#contact" className="btn border-none bg-neutral-100 text-accent-900">
