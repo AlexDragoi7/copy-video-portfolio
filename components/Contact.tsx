@@ -17,7 +17,7 @@ export default function Contact() {
           you within a couple of days. */}
         </p>
         <a href="mailto:dragoialenxadru26@gmail.com" className="btn btn-primary">
-          dragoialexandru26@gmail.com
+          alex@alexandrudragoi.com
         </a>
       </div>
     </section>
