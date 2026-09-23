@@ -41,19 +41,23 @@ export default function Hero() {
         }}
       />
       <div className="relative z-[1] flex min-h-[60vh] flex-col items-center justify-center px-5 py-14 text-center sm:px-8 sm:py-20 lg:px-16 lg:py-24">
-        <span className="mb-5 block text-[13px] tracking-[0.08em] uppercase">Copywriter & Content Writer</span>
+        <span className="mb-5 block text-[13px] tracking-[0.08em] uppercase">Strategic Copywriter & Content Writer</span>
         <h1 className="mb-6 min-h-[2.2em] max-w-[18ch] font-heading text-[clamp(38px,6.5vw,72px)] leading-[1.08] tracking-[-0.01em]">
-          {line1 || ""}
-          <span
-            className="ml-[0.06em] inline-block h-[0.85em] w-[0.4ch] animate-cursor-blink bg-current align-middle"
-            style={{ display: cursorOnLine1 ? "inline-block" : "none" }}
-          />
-          <br />
-          {line2 || ""}
-          <span
-            className="ml-[0.06em] inline-block h-[0.85em] w-[0.4ch] animate-cursor-blink bg-current align-middle"
-            style={{ display: cursorOnLine2 ? "inline-block" : "none" }}
-          />
+          {/* The typing effect starts empty, so crawlers and screen readers get the full headline here. */}
+          <span className="sr-only">{HEADLINE.replace("\n", " ")}</span>
+          <span aria-hidden="true">
+            {line1 || ""}
+            <span
+              className="ml-[0.06em] inline-block h-[0.85em] w-[0.4ch] animate-cursor-blink bg-current align-middle"
+              style={{ display: cursorOnLine1 ? "inline-block" : "none" }}
+            />
+            <br />
+            {line2 || ""}
+            <span
+              className="ml-[0.06em] inline-block h-[0.85em] w-[0.4ch] animate-cursor-blink bg-current align-middle"
+              style={{ display: cursorOnLine2 ? "inline-block" : "none" }}
+            />
+          </span>
         </h1>
         <p className="mx-auto mb-8 max-w-[52ch] text-[16.5px] leading-[1.65] text-text/90">
           From emails and ads to landing pages and creative articles. I write clear, persuasive copy that reaches the right people and encourages them to take the next step.
